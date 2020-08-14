@@ -84,7 +84,9 @@ const List<BottomNavigationBarItem> kNavBarList = [
   BottomNavigationBarItem(
     icon: Tab(
       icon: Image(
-        image: AssetImage('images/BellIcon.png'),
+        image: AssetImage('images/profileIcon.png'),
+        height: 30,
+        width: 30,
       ),
     ),
     activeIcon: Tab(
@@ -174,4 +176,23 @@ const kMainHeaderStyle = TextStyle(
   color: Colors.black,
   fontWeight: FontWeight.w600,
   fontSize: 50,
+);
+
+
+const kStoreName = TextStyle(
+  color: Colors.black,
+  fontWeight: FontWeight.w500,
+  fontSize: 23,
+);
+
+const kStoreType = TextStyle(
+  color: Colors.black,
+  fontWeight: FontWeight.w400,
+  fontSize: 16,
+);
+
+const kVisit = TextStyle(
+  color: Colors.white,
+  fontWeight: FontWeight.w600,
+  fontSize: 13  ,
 );

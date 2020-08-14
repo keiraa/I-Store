@@ -5,6 +5,7 @@ import 'package:istore/requisities/CatCard.dart';
 import 'package:istore/requisities/CircleStore.dart';
 import 'package:istore/requisities/PicContainer.dart';
 import 'package:istore/requisities/TextStyles.dart';
+import 'package:istore/screens/SearchPage.dart';
 
 
 class StorePage extends StatefulWidget {
@@ -158,6 +159,7 @@ class _StorePageState extends State<StorePage> {
                               setState(() {
                                 focus.unfocus();
                               });
+                              Navigator.push(context,MaterialPageRoute(builder: (context)=>SearchPage()));
                             },
                             child: Tab(
                               icon: Image(

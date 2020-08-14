@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:istore/requisities/TextStyles.dart';
 import 'package:istore/screens/Featured.dart';
 import 'package:istore/screens/GlobalStores.dart';
+import 'package:istore/screens/SearchPage.dart';
 import 'package:istore/screens/StorePage.dart';
 
 
@@ -13,7 +14,7 @@ class NavigationPage extends StatefulWidget {
 class _NavigationPageState extends State<NavigationPage> {
 
   int _currentIndex = 0;
-  List<Widget> _screens = [Featured(),StorePage(),StorePage(),GlobalStores(),StorePage()];
+  List<Widget> _screens = [Featured(),StorePage(),StorePage(),GlobalStores(),SearchPage()];
 
   @override
   Widget build(BuildContext context) {
