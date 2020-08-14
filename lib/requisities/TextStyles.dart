@@ -24,12 +24,14 @@ const List<BottomNavigationBarItem> kNavBarList = [
   BottomNavigationBarItem(
     icon: Tab(
       icon: Image(
-        image: AssetImage('images/homeIcon.png'),
+        image: AssetImage('images/featuredIcon.png'),
+        height: 30,
+        width: 30,
       ),
     ),
     activeIcon: Tab(
       icon: Image(
-        image: AssetImage('images/home.png'),
+        image: AssetImage('images/featuredIconSelected.png'),
         height: 30,
         width: 30,
       ),

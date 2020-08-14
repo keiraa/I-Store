@@ -3,24 +3,17 @@ import 'package:istore/requisities/TextStyles.dart';
 import 'package:istore/screens/LoginPage.dart';
 
 
-
-
-
-
 class RegisterPage extends StatefulWidget {
   @override
   _RegisterPageState createState() => _RegisterPageState();
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  String email;
+  String password;
+  String name;
   @override
   Widget build(BuildContext context) {
-    bool showSpinner = false;
-    String email;
-    String password;
-    String name;
-    final GlobalKey<FormState> _formKey = GlobalKey<FormState>();
-
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -28,7 +21,6 @@ class _RegisterPageState extends State<RegisterPage> {
               horizontal: MediaQuery.of(context).size.width * 0.05,
               vertical: MediaQuery.of(context).size.height * 0.015),
           child: ListView(
-            shrinkWrap: true,
             children: <Widget>[
               GestureDetector(
                 child: Text(
@@ -60,56 +52,36 @@ class _RegisterPageState extends State<RegisterPage> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.04,
               ),
-              Form(
-                key: _formKey,
-                child: Column(
-                  children: <Widget>[
-                    TextFormField(
-                      onChanged: (value) {
-                        name = value;
-                      },
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return 'Name is Required';
-                        }
-
-                        return null;
-                      },
-                      decoration: kLoginCredentials.copyWith(
-                        hintText: 'Name',
-                      ),
-                      keyboardType: TextInputType.text,
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.025,
-                    ),
-                    TextFormField(
-                      onChanged: (value) {
-                        email = value;
-                      },
-                      decoration: kLoginCredentials,
-                      keyboardType: TextInputType.emailAddress,
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.025,
-                    ),
-                    TextFormField(
-                      onChanged: (value) {
-                        password = value;
-                      },
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return 'Password is Required';
-                        }
-
-                        return null;
-                      },
-                      obscureText: true,
-                      decoration: kLoginCredentials.copyWith(
-                        hintText: 'Password',
-                      ),
-                    ),
-                  ],
+              TextField(
+                onChanged: (value) {
+                  name = value;
+                  print(name);
+                },
+                decoration: kLoginCredentials.copyWith(
+                  hintText: 'Name',
+                ),
+                keyboardType: TextInputType.text,
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.025,
+              ),
+              TextField(
+                onChanged: (value) {
+                  email = value;
+                },
+                decoration: kLoginCredentials,
+                keyboardType: TextInputType.emailAddress,
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.025,
+              ),
+              TextField(
+                onChanged: (value) {
+                  password = value;
+                },
+                obscureText: true,
+                decoration: kLoginCredentials.copyWith(
+                  hintText: 'Password',
                 ),
               ),
               SizedBox(

@@ -57,52 +57,45 @@ class _LoginPageState extends State<LoginPage> {
               SizedBox(
                 height: MediaQuery.of(context).size.height * 0.04,
               ),
-              Form(
-                key: _formKey,
-                child: Column(
-                  children: <Widget>[
-                    TextFormField(
-                      onChanged: (value) {
-                        email = value;
-                      },
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return 'Email is Required';
-                        }
+              TextFormField(
+                onChanged: (value) {
+                  email = value;
+                },
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'Email is Required';
+                  }
 
-                        if (!RegExp(
-                            r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
-                            .hasMatch(value)) {
-                          return 'Please enter a valid email Address';
-                        }
-                        return null;
-                      },
-                      decoration: kLoginCredentials,
-                      keyboardType: TextInputType.emailAddress,
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.025,
-                    ),
-                    TextFormField(
-                      onChanged: (value) {
-                        password = value;
-                      },
-                      validator: (value) {
-                        if (value.isEmpty) {
-                          return 'Password is Required';
-                        }
-                        if (c == 1) {
-                          return 'Credentials Mismatch';
-                        }
+                  if (!RegExp(
+                      r"[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?")
+                      .hasMatch(value)) {
+                    return 'Please enter a valid email Address';
+                  }
+                  return null;
+                },
+                decoration: kLoginCredentials,
+                keyboardType: TextInputType.emailAddress,
+              ),
+              SizedBox(
+                height: MediaQuery.of(context).size.height * 0.025,
+              ),
+              TextFormField(
+                onChanged: (value) {
+                  password = value;
+                },
+                validator: (value) {
+                  if (value.isEmpty) {
+                    return 'Password is Required';
+                  }
+                  if (c == 1) {
+                    return 'Credentials Mismatch';
+                  }
 
-                        return null;
-                      },
-                      obscureText: true,
-                      decoration: kLoginCredentials.copyWith(
-                        hintText: 'Password',
-                      ),
-                    ),
-                  ],
+                  return null;
+                },
+                obscureText: true,
+                decoration: kLoginCredentials.copyWith(
+                  hintText: 'Password',
                 ),
               ),
               SizedBox(
