@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:istore/requisities/CatCard.dart';
 import 'package:istore/requisities/CircleStore.dart';
@@ -125,27 +126,39 @@ class _StorePageState extends State<StorePage> {
               SizedBox(
                 height: 15,
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: <Widget>[
-                  Row(
-                    children: <Widget>[
-                      CatCard(img: 'grocery.png',name: 'Grocery',),
-                      SizedBox(width: 30,),
-                      CatCard(img: 'fashionIcon.png',name: 'Fashion',)
-                    ],
-                  ),
-                  SizedBox(
-                    height: 15,
-                  ),
-                  Row(
-                    children: <Widget>[
-                      CatCard(img: 'pharmaIcon.png',name: 'Pharma',),
-                      SizedBox(width: 30,),
-                      CatCard(img: 'bakeryIcon.png',name: 'Bakery',)
-                    ],
-                  ),
-                ],
+              Container(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
+                  children: <Widget>[
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        CatCard(img: 'grocery.png',name: 'Grocery',),
+                        CatCard(img: 'fashionIcon.png',name: 'Fashion',)
+                      ],
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        CatCard(img: 'pharmaIcon.png',name: 'Pharma',),
+                        CatCard(img: 'bakeryIcon.png',name: 'Bakery',)
+                      ],
+                    ),
+                    SizedBox(
+                      height: 15,
+                    ),
+                    Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: <Widget>[
+                        CatCard(img: 'foodIcon.png',name: 'Food',),
+                        CatCard(img: 'electronicIcon.png',name: 'Electronics',)
+                      ],
+                    ),
+                  ],
+                ),
               ),
             ],
           )

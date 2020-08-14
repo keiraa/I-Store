@@ -19,9 +19,12 @@ class CatCard extends StatelessWidget {
             ),
           ),
           SizedBox(width: 20,),
-          Text(
-            name,
-            style: kCatText,
+          Container(
+            width: MediaQuery.of(context).size.width*0.27,
+            child: Text(
+              name,
+              style: kCatText,
+            ),
           ),
         ],
       ),

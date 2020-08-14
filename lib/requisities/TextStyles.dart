@@ -114,7 +114,7 @@ const kiconText = TextStyle(
 );
 
 const kCatText = TextStyle(
-  fontSize: 18,
+  fontSize: 16,
 );
 
 const kSignIn = TextStyle(
