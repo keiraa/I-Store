@@ -99,7 +99,7 @@ const List<BottomNavigationBarItem> kNavBarList = [
 
 const kFavTitle = TextStyle(
   fontSize: 25,
-  fontWeight: FontWeight.w700,
+  fontWeight: FontWeight.w500,
   color: Color(0xff555555),
 );
 

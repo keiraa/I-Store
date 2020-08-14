@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:istore/screens/RegisterPage.dart';
+import 'package:istore/screens/StorePage.dart';
 import 'package:istore/screens/ZIPScreen.dart';
 
 void main() {
@@ -12,7 +13,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      home: RegisterPage(),
+      home: StorePage(),
     );
   }
 }
