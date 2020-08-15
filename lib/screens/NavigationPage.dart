@@ -2,8 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:istore/requisities/TextStyles.dart';
 import 'package:istore/screens/Featured.dart';
 import 'package:istore/screens/GlobalStores.dart';
+import 'package:istore/screens/QRScreen.dart';
 import 'package:istore/screens/SearchPage.dart';
 import 'package:istore/screens/StorePage.dart';
+import 'package:istore/screens/profilePage.dart';
 
 
 class NavigationPage extends StatefulWidget {
@@ -14,7 +16,7 @@ class NavigationPage extends StatefulWidget {
 class _NavigationPageState extends State<NavigationPage> {
 
   int _currentIndex = 0;
-  List<Widget> _screens = [Featured(),StorePage(),StorePage(),GlobalStores(),SearchPage()];
+  List<Widget> _screens = [Featured(),StorePage(),QRViewExample(),GlobalStores(),ProfilePage()];
 
   @override
   Widget build(BuildContext context) {

@@ -20,6 +20,9 @@ class _StorePageState extends State<StorePage> {
   ScrollController scrollController = ScrollController();
   bool topView = true;
 
+
+  bool haveSearched = false;
+
   @override
   void initState() {
     // TODO: implement initState
@@ -40,34 +43,41 @@ class _StorePageState extends State<StorePage> {
 
   void onScroll(){
     if(scrollController.position.userScrollDirection == ScrollDirection.reverse)
-      {
-        setState(() {
-          topView = false;
-        });
-      }
+    {
+      setState(() {
+        topView = false;
+      });
+    }
     else if(scrollController.position.userScrollDirection == ScrollDirection.forward)
-      {
-        if(scrollController.position.pixels == 0.0)
-        {
-          setState(() {
-            topView = true;
-          });
-        }
-      }
-  }
-
-  Future<bool> onWillPopScope(){
-    if(!topView)
+    {
+      if(scrollController.position.pixels == 0.0)
       {
         setState(() {
           topView = true;
         });
-        focus.unfocus();
       }
+    }
+  }
+
+  Future<bool> onWillPopScope(){
+    if(!topView)
+    {
+      setState(() {
+        topView = true;
+      });
+      focus.unfocus();
+    }
+    else if(haveSearched)
+    {
+      setState(() {
+        haveSearched = false;
+        _searchedText = '';
+      });
+    }
     else
-      {
-        Navigator.pop(context);
-      }
+    {
+      Navigator.pop(context);
+    }
     return Future.value(false);
   }
 
@@ -83,16 +93,55 @@ class _StorePageState extends State<StorePage> {
   Widget build(BuildContext context) {
     return WillPopScope(
       onWillPop: onWillPopScope,
-      child: Scaffold(
+      child: haveSearched?
+
+      Scaffold(
+        appBar: AppBar(
+          leading: InkWell(
+            onTap: (){
+              setState(() {
+                haveSearched = false;
+                _searchedText = '';
+              });
+            },
+            child: Icon(
+              Icons.arrow_back_ios,
+              color: Colors.white,
+              size: 20,
+            ),
+          ),
+          flexibleSpace: Container(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(colors: [Color(0xfff7ba06),Color(0xffEDB20B),Color(0xffECB10A)],),
+            ),
+          ),
+          title: Text(_searchedText,),
+          actions: <Widget>[
+            Container(
+              margin: EdgeInsets.symmetric(horizontal: 20),
+              child: Tab(
+                icon: Image(
+                  image: AssetImage('images/searchWhite.png'),
+                  height: 28,
+                  width: 28,
+                ),
+              ),
+            ),
+          ],
+        ),
+        body: SearchPage(searchedText: _searchedText,),
+      )
+
+          :Scaffold(
         resizeToAvoidBottomPadding: false,
         body: GestureDetector(
           onVerticalDragCancel: (){
-              if(scrollController.position.pixels == 0.0)
-              {
-                setState(() {
-                  topView = true;
-                });
-              }
+            if(scrollController.position.pixels == 0.0)
+            {
+              setState(() {
+                topView = true;
+              });
+            }
           },
           child: Stack(
             children: <Widget>[
@@ -158,8 +207,11 @@ class _StorePageState extends State<StorePage> {
                             onTap: () async{
                               setState(() {
                                 focus.unfocus();
+                                if(_searchedText.isNotEmpty)
+                                {
+                                  haveSearched = true;
+                                }
                               });
-                              Navigator.push(context,MaterialPageRoute(builder: (context)=>SearchPage()));
                             },
                             child: Tab(
                               icon: Image(

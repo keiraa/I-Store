@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:istore/requisities/TextStyles.dart';
 import 'package:istore/screens/RegisterPage.dart';
+import 'package:istore/services/authentication.dart';
 
 
 
@@ -103,7 +104,7 @@ class _LoginPageState extends State<LoginPage> {
               ),
               GestureDetector(
                 onTap: () {
-
+                 signin(email.trim(), password, context);
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,

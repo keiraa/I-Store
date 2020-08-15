@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:istore/requisities/TextStyles.dart';
+import 'package:istore/screens/NavigationPage.dart';
 import 'package:otp_text_field/otp_text_field.dart';
 
 class ZIPScreen extends StatefulWidget {
@@ -92,7 +93,7 @@ class _ZIPScreenState extends State<ZIPScreen> {
                   child: GestureDetector(
                     onTap: (){
                       //_firestore.collection('Details').document('$userID').updateData({'PIN': pin});
-                      //Navigator.push(context, MaterialPageRoute(builder: (context)=>NavPage()));
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=>NavigationPage()));
                     },
                     child: Container(
                       width: MediaQuery.of(context).size.width*0.5,

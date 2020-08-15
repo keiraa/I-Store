@@ -18,7 +18,7 @@ class CatCard extends StatelessWidget {
               image: AssetImage('images/$img'),
             ),
           ),
-          SizedBox(width: 20,),
+          SizedBox(width: MediaQuery.of(context).size.width*0.03,),
           Container(
             width: MediaQuery.of(context).size.width*0.27,
             child: Text(

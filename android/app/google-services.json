@@ -1,0 +1,69 @@
+{
+  "project_info": {
+    "project_number": "898132311955",
+    "firebase_url": "https://akhil-f6bf7.firebaseio.com",
+    "project_id": "akhil-f6bf7",
+    "storage_bucket": "akhil-f6bf7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898132311955:android:9011402781c27bce56b266",
+        "android_client_info": {
+          "package_name": "com.appovate.istore"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898132311955-u36rlur9ugp0gi5uohmm3k7rjilvmaq9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8fyRotyLu83A6Yh6bgkNBAdlO-dFI1Qg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "898132311955-u36rlur9ugp0gi5uohmm3k7rjilvmaq9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:898132311955:android:01aa78d72384e28556b266",
+        "android_client_info": {
+          "package_name": "com.appovate.istoreadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "898132311955-u36rlur9ugp0gi5uohmm3k7rjilvmaq9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD8fyRotyLu83A6Yh6bgkNBAdlO-dFI1Qg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "898132311955-u36rlur9ugp0gi5uohmm3k7rjilvmaq9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

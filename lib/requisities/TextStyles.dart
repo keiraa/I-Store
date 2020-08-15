@@ -84,9 +84,9 @@ const List<BottomNavigationBarItem> kNavBarList = [
   ),
   BottomNavigationBarItem(
     icon: Icon(
-        FontAwesomeIcons.user,
+      FontAwesomeIcons.user,
       size: 25,
-      ),
+    ),
     title: Text(''),
     backgroundColor: Colors.white,
   )

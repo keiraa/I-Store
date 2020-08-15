@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:istore/requisities/TextStyles.dart';
 import 'package:istore/screens/LoginPage.dart';
-
+import 'package:istore/services/authentication.dart';
 
 class RegisterPage extends StatefulWidget {
   @override
@@ -12,6 +12,12 @@ class _RegisterPageState extends State<RegisterPage> {
   String email;
   String password;
   String name;
+
+
+  void getUser()
+  {
+
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -29,7 +35,8 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
                 onTap: () {
                   Navigator.pop(context);
-                  Navigator.push(context, MaterialPageRoute(builder: (context)=>LoginPage()));
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => LoginPage()));
                 },
               ),
               Container(
@@ -89,9 +96,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
               GestureDetector(
                 onTap: () {
-                  setState(() {
-
-                  });
+                  register(name,email, password, context);
                 },
                 child: Container(
                   width: MediaQuery.of(context).size.width,
@@ -131,8 +136,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     child: Row(
                       children: <Widget>[
                         Padding(
-                          padding:
-                          EdgeInsets.only(top: 5, left: 10, bottom: 5),
+                          padding: EdgeInsets.only(top: 5, left: 10, bottom: 5),
                           child: Tab(
                             icon: Image(
                               image: AssetImage('images/fbIcon.png'),
@@ -167,17 +171,14 @@ class _RegisterPageState extends State<RegisterPage> {
                 height: MediaQuery.of(context).size.height * 0.025,
               ),
               GestureDetector(
-                onTap: () {
-
-                },
+                onTap: () {},
                 child: Card(
                   elevation: 10,
                   child: IntrinsicHeight(
                     child: Row(
                       children: <Widget>[
                         Padding(
-                          padding: EdgeInsets.only(
-                              top: 5, left: 10, bottom: 5),
+                          padding: EdgeInsets.only(top: 5, left: 10, bottom: 5),
                           child: Tab(
                             icon: Image(
                               image: AssetImage('images/googleIcon.png'),
@@ -209,10 +210,7 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
               SizedBox(
-                height: MediaQuery
-                    .of(context)
-                    .size
-                    .height * 0.08,
+                height: MediaQuery.of(context).size.height * 0.08,
               ),
               Center(
                 child: GestureDetector(
@@ -220,14 +218,8 @@ class _RegisterPageState extends State<RegisterPage> {
                     //TODO: Skip SignIn Functionality
                   },
                   child: Container(
-                    width: MediaQuery
-                        .of(context)
-                        .size
-                        .width * 0.4,
-                    height: MediaQuery
-                        .of(context)
-                        .size
-                        .height * 0.065,
+                    width: MediaQuery.of(context).size.width * 0.4,
+                    height: MediaQuery.of(context).size.height * 0.065,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.all(Radius.circular(5)),
                       color: Color(0xffffd21c),
